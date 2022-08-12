@@ -8,5 +8,10 @@ describe('<App/> component should', () => {
     const searchUserForm = screen.getByTestId(/search-user-form/i);
     expect(searchUserForm).toBeInTheDocument();
   });
+
+  test('contain user info section', () => {
+    const userInfoSection = screen.getByTestId(/user-info-section/i);
+    expect(userInfoSection).toBeInTheDocument();
+  });
   
 });
