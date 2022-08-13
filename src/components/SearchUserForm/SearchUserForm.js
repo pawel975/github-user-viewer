@@ -1,5 +1,21 @@
+import { useEffect } from "react";
 
-const SearchUserForm = () => {
+const SearchUserForm = ({setUserData, setIsSearchValid}) => {
+
+    useEffect(()=> {
+    
+        const URL = `https://api.github.com/users/pawel975`;
+    
+        fetch(URL)
+        .then(res => res.json())
+        .then(data => setUserData(data))
+        .catch(err => {
+            console.error(err); 
+            setIsSearchValid(false)
+        })
+    
+      }, [setIsSearchValid, setUserData]);
+
     return (
         <form 
             className="search-user-form"

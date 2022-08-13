@@ -1,10 +1,29 @@
+import { useEffect, useState } from 'react';
+import FailedSearchMessage from '../FailedSearchMessage/FailedSearchMessage';
 import SearchUserForm from '../SearchUserForm/SearchUserForm';
-import './App.css';
+import UserInfoSection from '../UserInfoSection/UserInfoSection';
+import './App.scss';
 
 const App = () => {
+
+  const [userData, setUserData] = useState({});
+  const [isSearchValid, setIsSearchValid] = useState(true);
+
   return (
     <div className="App">
-      <SearchUserForm/>
+      
+      <SearchUserForm 
+        setUserData={setUserData}
+        setIsSearchValid={setIsSearchValid} 
+      />
+
+      {
+        isSearchValid ?
+        <UserInfoSection userData={userData} />
+        :
+        <FailedSearchMessage message={"This user doesn't exist"} />
+      }
+      
     </div>
   );
 }

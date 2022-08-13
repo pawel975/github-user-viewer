@@ -10,6 +10,7 @@ describe('<App/> component should', () => {
   });
 
   test('contain user info section', () => {
+    render(<App />);
     const userInfoSection = screen.getByTestId(/user-info-section/i);
     expect(userInfoSection).toBeInTheDocument();
   });

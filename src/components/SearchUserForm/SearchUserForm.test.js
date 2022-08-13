@@ -10,7 +10,10 @@ describe('<SearchUserForm/> should', () => {
     });
 
     test('contain button to submit user name for search', () => {
-        render(<SearchUserForm/>);
+        render(<SearchUserForm 
+            setIsSearchValid={jest.fn()}
+            setUserData={jest.fn()}
+        />);
         const searchUserBtn = screen.getByText("Search");
         expect(searchUserBtn).toBeInTheDocument();
     });
