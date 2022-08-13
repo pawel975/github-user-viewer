@@ -10,7 +10,7 @@ const App = () => {
   const [isSearchValid, setIsSearchValid] = useState(true);
 
   return (
-    <div className="App">
+    <div className="app">
       
       <SearchUserForm 
         setUserData={setUserData}

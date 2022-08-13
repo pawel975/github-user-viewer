@@ -1,8 +1,9 @@
 import { useEffect } from "react";
+import "./SearchUserForm.scss";
 
 const SearchUserForm = ({setUserData, setIsSearchValid}) => {
 
-    useEffect(()=> {
+    useEffect(() => {
     
         const URL = `https://api.github.com/users/pawel975`;
     
