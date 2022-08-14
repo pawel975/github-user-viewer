@@ -34,10 +34,11 @@ html:focus-within {
 
 /* Set core body defaults */
 body {
+  color: variables.$darkTextClr;
   font-family: variables.$primaryFont;
   min-height: 100vh;
   text-rendering: optimizeSpeed;
-  line-height: 1.5;
+  line-height: 1.2;
   display: flex;
   flex-direction: column;
   margin-top: 4rem;

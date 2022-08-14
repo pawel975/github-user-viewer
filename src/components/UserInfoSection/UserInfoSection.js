@@ -2,7 +2,7 @@ import "../UserInfoSection/UserInfoSection.scss";
 
 const UserInfoSection = ({userData}) => {
 
-    const {avatar_url, login, name} = userData;
+    const {avatar_url, login, name, html_url} = userData;
 
     return (
         <section 
@@ -16,7 +16,13 @@ const UserInfoSection = ({userData}) => {
             <div className="info-wrapper">
                 <header className="info-wrapper__name">{name}</header>
                 <p className="info-wrapper__login">{login}</p>
+                <a className="info-wrapper__github-link" href={html_url}>
+                    <button>
+                        See on GitHub
+                    </button>
+                </a>
             </div>
+
 
         </section>
     )

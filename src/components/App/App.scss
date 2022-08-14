@@ -1,8 +1,8 @@
 @use "../../globalStyles.scss";
 
 .app {  
-    outline: 2px solid green;
     display: flex;
     flex-direction: column;
+    gap: 1.5rem;
     align-items: center;
 }
