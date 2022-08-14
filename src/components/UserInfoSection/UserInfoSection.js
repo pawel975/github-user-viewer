@@ -1,3 +1,4 @@
+import "../UserInfoSection/UserInfoSection.scss";
 
 const UserInfoSection = () => {
 

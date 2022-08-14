@@ -2,11 +2,11 @@
 const FailedSearchMessage = ({message}) => {
 
     return (
-        <div
+        <section
             className="failed-search-message" 
         >
             <span>{message}</span>
-        </div>
+        </section>
     )
 }
 

@@ -1,7 +1,10 @@
-import { useEffect, useState } from 'react';
+import {useState } from 'react';
+import ActiveRepoDetailsSection from '../ActiveRepoDetailsSection/ActiveRepoDetailsSection';
 import FailedSearchMessage from '../FailedSearchMessage/FailedSearchMessage';
 import SearchUserForm from '../SearchUserForm/SearchUserForm';
+import UserContent from '../UserContent/UserContent';
 import UserInfoSection from '../UserInfoSection/UserInfoSection';
+import UserReposSection from '../UserReposSection/UserReposSection';
 import './App.scss';
 
 const App = () => {
@@ -19,9 +22,11 @@ const App = () => {
 
       {
         isSearchValid ?
-        <UserInfoSection userData={userData} />
-        :
-        <FailedSearchMessage message={"This user doesn't exist"} />
+          <UserContent
+            userData={userData}
+          />
+          :
+          <FailedSearchMessage message={"This user doesn't exist"} />
       }
       
     </div>

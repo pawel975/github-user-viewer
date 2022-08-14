@@ -9,10 +9,10 @@ describe('<App/> component should', () => {
     expect(searchUserForm).toBeInTheDocument();
   });
 
-  test('contain user info section', () => {
-    render(<App />);
-    const userInfoSection = screen.getByTestId(/user-info-section/i);
-    expect(userInfoSection).toBeInTheDocument();
+  test('contain user content section', () => {
+    render(<App/>);
+    const userContent = screen.getByTestId(/user-content/i);
+    expect(userContent).toBeInTheDocument();
   });
   
 });
