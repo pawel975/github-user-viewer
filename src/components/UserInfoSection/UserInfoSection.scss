@@ -1,6 +1,25 @@
 
 .user-info-section {
+    padding: 1rem;
     min-width: 40rem;
-    min-height: 15rem;
+    height: 15rem;
     outline: 4px solid red;
+    display: flex;
+    gap: 1rem;
+
+    .avatar-wrapper {
+        height: 100%;
+
+        img {
+            height: 100%;
+        }
+    }
+
+    .info-wrapper {
+        display: flex;
+
+        &__name {
+            color: red;
+        }
+    }
 }
