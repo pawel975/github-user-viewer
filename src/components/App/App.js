@@ -1,5 +1,5 @@
 import {useState } from 'react';
-import FailedSearchMessage from '../FailedSearchMessage/FailedSearchMessage';
+import Message from '../Message/Message';
 import SearchUserForm from '../SearchUserForm/SearchUserForm';
 import UserContent from '../UserContent/UserContent';
 import './App.scss';
@@ -19,12 +19,15 @@ const App = () => {
 
       {
         (isSearchValid && userData) ?
-          <UserContent
-            userData={userData}
-          />
+          <UserContent userData={userData}/>
           :
-          <FailedSearchMessage message={"This user doesn't exist"} />
-      }
+          (
+            isSearchValid ?
+            <Message message={"Type user's name to display profile"} type={"info"} />
+            :
+            <Message message={"This user doesn't exist"} type={"error"} />
+          )
+        }
       
     </div>
   );

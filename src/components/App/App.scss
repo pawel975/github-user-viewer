@@ -1,6 +1,8 @@
-@use "../../globalStyles.scss";
+@use '../../variables.scss';
+@use '../../globalStyles.scss';
 
 .app {  
+    width: clamp(15rem, 90%, 100rem);
     display: flex;
     flex-direction: column;
     gap: 1.5rem;

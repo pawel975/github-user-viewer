@@ -12,8 +12,6 @@
     width: 100%;
     border-bottom: 0.1rem solid variables.$borders;
 
-
-
     &__repo-link {
         font-weight: bold;
         color: variables.$links;
@@ -31,6 +29,12 @@
     }
 
     &__language {
+        pointer-events: none;
+        font-size: variables.$ff-100;
+    }
+    
+    &__description {
+        text-align: left;
         pointer-events: none;
         font-size: variables.$ff-100;
     }

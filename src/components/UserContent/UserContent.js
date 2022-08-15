@@ -3,7 +3,6 @@ import UserInfoSection from "../UserInfoSection/UserInfoSection";
 import UserReposSection from "../UserReposSection/UserReposSection";
 import "../UserContent/UserContent.scss";
 import { useEffect, useState } from "react";
-// import data from '../../mockReposEndpoint.json';
 
 const UserContent = ({userData}) => {
     
@@ -16,12 +15,8 @@ const UserContent = ({userData}) => {
 
         fetch(repos_url)
         .then(res => res.json())
-        .then(data => {
-            setUserReposList(data)
-        })
+        .then(data => setUserReposList(data))
         .catch(err => console.error(err));
-
-        // setUserReposList(data)
 
     }, [repos_url, userReposList]);
 

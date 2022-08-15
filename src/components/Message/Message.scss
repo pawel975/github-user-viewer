@@ -1,0 +1,25 @@
+@use '../../variables.scss';
+@use '../../globalStyles.scss';
+
+.message-wrapper {
+    // outline: 2px solid red;
+    width: clamp(10rem, 80%, 40rem);
+    padding: 0.5rem;
+    border: 0.125rem solid;
+    border-radius: 0.625rem;
+    font-size: variables.$ff-100;
+    text-align: center;
+    
+}
+
+.info-theme {
+    background-color: variables.$messageInfo;
+    border-color: darken($color: variables.$messageInfo, $amount: 30%);
+    color: darken($color: variables.$messageInfo, $amount: 50%);
+}
+
+.error-theme {
+    background-color: variables.$messageError;
+    border-color: darken($color: variables.$messageError, $amount: 30%);
+    color: darken($color: variables.$messageError, $amount: 50%);
+}

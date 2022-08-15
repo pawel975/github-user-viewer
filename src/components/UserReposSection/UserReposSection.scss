@@ -1,6 +1,8 @@
+@use '../../variables.scss';
+@use '../../globalStyles.scss';
 
 .user-repos-section {
-    width: 100%;
+    width: clamp(10rem, 100%, 60rem);
     height: 50vh;
     overflow-y: scroll;
 }

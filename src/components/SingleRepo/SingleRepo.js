@@ -2,7 +2,7 @@ import './SingleRepo.scss';
 
 const SingleRepo = ({repoDetails, handleRepoClick}) => {
 
-    const {name, html_url, language, id} = repoDetails;
+    const {name, html_url, language, id, description} = repoDetails;
 
     return (
         <button 
@@ -28,7 +28,14 @@ const SingleRepo = ({repoDetails, handleRepoClick}) => {
                 <span 
                     className='single-repo__language'
                 >
-                    {language}
+                    <strong>{language}</strong>
+                </span>
+            </div>
+            <div>
+                <span 
+                    className='single-repo__description'
+                >
+                    {description}
                 </span>
             </div>
         </button>

@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import "./SearchUserForm.scss";
-import mockedData from '../../mockUserEndpoint.json';
 
 const SearchUserForm = ({setUserData, setIsSearchValid}) => {
 
-    const [currentSearchValue, setCurrentSearchValue] = useState("");
+    const [currentSearchValue, setCurrentSearchValue] = useState();
     const [searchedUserName, setSearchedUserName] = useState(); 
 
     useEffect(() => {
@@ -24,8 +23,6 @@ const SearchUserForm = ({setUserData, setIsSearchValid}) => {
             .catch(setIsSearchValid(false));
 
         }
-
-        // setUserData(mockedData)
     
     }, [searchedUserName, setIsSearchValid, setUserData]);
 

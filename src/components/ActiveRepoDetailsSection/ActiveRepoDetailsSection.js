@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Message from '../Message/Message';
 import "../ActiveRepoDetailsSection/ActiveRepoDetailsSection.scss";
 
 const ActiveRepoDetailsSection = ({viewedRepoId, userReposList}) => {
@@ -6,10 +7,11 @@ const ActiveRepoDetailsSection = ({viewedRepoId, userReposList}) => {
     const [viewedRepoData, setViewedRepoData] = useState();
 
     useEffect(() => {
-       setViewedRepoData(userReposList.filter(repo => repo.id === viewedRepoId)[0])
+
+        // Search for repo details based on repo clicked at repos list
+        setViewedRepoData(userReposList.filter(repo => repo.id === viewedRepoId)[0])
+
     }, [userReposList, viewedRepoData, viewedRepoId])
-    
-    // const {name, stargazers_count, watchers_count} = viewedRepoData;
     
     return (
         <section
@@ -29,7 +31,7 @@ const ActiveRepoDetailsSection = ({viewedRepoId, userReposList}) => {
                 </p>
             </>
             :
-            <p>Click at any user's repo to view details</p>
+            <Message message={"Click at any user's repo to view details"} type={"info"} />
         }
         </section>
     )
