@@ -17,7 +17,7 @@ const UserInfoSection = ({userData}) => {
                 <header className="info-wrapper__name">{name}</header>
                 <p className="info-wrapper__login">{login}</p>
                 <a className="info-wrapper__github-link" href={html_url}>
-                    <button>
+                    <button tabIndex="-1">
                         See on GitHub
                     </button>
                 </a>

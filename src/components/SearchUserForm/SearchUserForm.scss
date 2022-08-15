@@ -3,4 +3,21 @@
 
 .search-user-form {
     margin: auto;
+    display: flex;
+    gap: 0.2rem;
+
+    &__input {
+        width: clamp(15rem, 100%, 40rem);
+        border-radius: 0.5rem;
+        border: 0.1rem solid variables.$borders;
+    }
+
+    &__button {
+        padding: 0.3rem;
+        border-radius: 0.5rem;
+        border: 0.1rem solid darken($color: variables.$primaryBtnClr , $amount: 10%);
+        background-color: variables.$primaryBtnClr;
+        color: variables.$veryLightTextClr;
+        font-size: variables.$ff-100;
+    }
 }

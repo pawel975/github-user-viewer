@@ -9,19 +9,22 @@ const UserContent = ({userData}) => {
     
     // const {repos_url} = userData;
 
-    const [userReposList, setUserReposList] = useState(data);
-    const [viewedRepoId, setViewedRepoId] = useState(userReposList[0].id);
+    const [userReposList, setUserReposList] = useState(undefined);
+    const [viewedRepoId, setViewedRepoId] = useState(null);
 
     useEffect(() => {
 
         // fetch(repos_url)
         // .then(res => res.json())
-        // .then(data => setUserReposList(data))
+        // .then(data => {
+        //     setUserReposList(data)
+        //     setViewedRepoId(userReposList[0].id)
+        // })
         // .catch(err => console.error(err));
 
         setUserReposList(data)
 
-    }, [userReposList]);
+    }, []);
 
     const handleRepoClick = (e) => {
         if (e.target.className === "single-repo") {
@@ -41,16 +44,18 @@ const UserContent = ({userData}) => {
             <UserInfoSection userData={userData} />
         {
             userReposList &&
-            <div className="repos-section-wrapper">
-                <UserReposSection 
-                    userReposList={userReposList} 
-                    handleRepoClick={handleRepoClick}    
-                />
-                <ActiveRepoDetailsSection 
-                    viewedRepoId={viewedRepoId} 
-                    userReposList={userReposList}
-                />
-            </div>
+                <div className="repos-section-wrapper">
+                    <UserReposSection 
+                        userReposList={userReposList} 
+                        handleRepoClick={handleRepoClick}    
+                    />
+
+                    <ActiveRepoDetailsSection 
+                        viewedRepoId={viewedRepoId} 
+                        userReposList={userReposList}
+                    />
+
+                </div>
         }
             
 

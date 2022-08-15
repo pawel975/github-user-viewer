@@ -4,26 +4,33 @@ import mockedData from '../../mockUserEndpoint.json';
 
 const SearchUserForm = ({setUserData, setIsSearchValid}) => {
 
-    const [searchValue, setSearchValue] = useState("");
+    const [currentSearchValue, setCurrentSearchValue] = useState("");
+    const [searchedUserName, setSearchedUserName] = useState(""); 
 
     useEffect(() => {
     
-        // const URL = `https://api.github.com/users/pawel975`;
+        // const URL = `https://api.github.com/users/${searchedUserName}`;
     
         // fetch(URL)
         // .then(res => res.json())
-        // .then(data => setUserData(data))
-        // .catch(err => {
-        //     console.error(err); 
-        //     setIsSearchValid(false)
+        // .then(data => {
+        //     setIsSearchValid(true);
+        //     setUserData(data)
         // })
+        // .catch(setIsSearchValid(false));
 
         setUserData(mockedData)
     
-    }, [setIsSearchValid, setUserData]);
+    }, []);
 
-    const handleFormSubmit = () => {
+    const handlecurrentSearchValueChange = (e) => {
+        setCurrentSearchValue(e.target.value)
+    }
 
+    const handlecurrentSearchValueSubmit = (e) => {
+        e.preventDefault();
+        setSearchedUserName(currentSearchValue);
+        setCurrentSearchValue("");
     }
     
     return (
@@ -32,11 +39,14 @@ const SearchUserForm = ({setUserData, setIsSearchValid}) => {
             data-testid="search-user-form"
         >
             <input
+                value={currentSearchValue}
+                onChange={handlecurrentSearchValueChange}
                 className="search-user-form__input"
                 type="text"
                 placeholder="Search for user..."
             />
             <input
+                onClick={handlecurrentSearchValueSubmit}
                 className="search-user-form__button"
                 type="submit"
                 value="Search"

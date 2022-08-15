@@ -9,6 +9,7 @@ const SingleRepo = ({repoDetails, handleRepoClick}) => {
             className="single-repo"
             onClick={handleRepoClick}
             id={id}
+            tabIndex="0"
         >
             <div>
                 <a 
