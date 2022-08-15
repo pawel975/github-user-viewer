@@ -16,4 +16,4 @@ Run `npm test` to run all tests.
 
 ## Build
 
-Run `npm build` to build app.
+Run `npm run build` to build app.
