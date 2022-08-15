@@ -17,27 +17,6 @@ const ActiveRepoDetailsSection = ({viewedRepoId, userReposList}) => {
 
     }, [userReposList, viewedRepoData, viewedRepoId])
 
-    useEffect(() => {
-
-        if (viewedRepoData) {
-
-            fetch(`${viewedRepoData.url}/commits`)
-            .then(res => res.json())
-            .then(data => setOtherViewedRepoData(prevState => ({
-                ...prevState,
-                commitsCount: data.length
-            })))
-
-            fetch(`${viewedRepoData.url}/comments`)
-            .then(res => res.json())
-            .then(data => setOtherViewedRepoData(prevState => ({
-                ...prevState,
-                commentsCount: data.length
-            })))
-        }
-        
-    }, [viewedRepoData])
-    
     return (
         <section
             className="active-repo-details-section"
@@ -53,12 +32,6 @@ const ActiveRepoDetailsSection = ({viewedRepoId, userReposList}) => {
                 </p>
                 <p className="active-repo-details-section__param">
                     Watchers: <strong><span>{viewedRepoData.watchers_count}</span></strong>
-                </p>
-                <p className="active-repo-details-section__param">
-                    Commits: <strong><span>{otherViewedRepoData.commitsCount}</span></strong>
-                </p>
-                <p className="active-repo-details-section__param">
-                    Comments: <strong><span>{otherViewedRepoData.commentsCount}</span></strong>
                 </p>
             </>
             :
