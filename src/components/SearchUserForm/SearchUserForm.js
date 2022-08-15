@@ -45,12 +45,14 @@ const SearchUserForm = ({setUserData, setIsSearchValid}) => {
                 value={currentSearchValue}
                 onChange={handlecurrentSearchValueChange}
                 className="search-user-form__input"
+                data-testid="search-user-form__input"
                 type="text"
                 placeholder="Search for user..."
             />
             <input
                 onClick={handlecurrentSearchValueSubmit}
                 className="search-user-form__button"
+                data-testid="search-user-form__button"
                 type="submit"
                 value="Search"
             />

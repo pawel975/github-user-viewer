@@ -1,6 +1,6 @@
 import "./Message.scss";
 
-const FailedSearchMessage = ({message, type}) => {
+const Message = ({message, type}) => {
 
     return (
         <section
@@ -14,4 +14,4 @@ const FailedSearchMessage = ({message, type}) => {
     )
 }
 
-export default FailedSearchMessage;
+export default Message;

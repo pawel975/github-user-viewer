@@ -5,6 +5,10 @@ import "../ActiveRepoDetailsSection/ActiveRepoDetailsSection.scss";
 const ActiveRepoDetailsSection = ({viewedRepoId, userReposList}) => {
 
     const [viewedRepoData, setViewedRepoData] = useState();
+    const [otherViewedRepoData, setOtherViewedRepoData] = useState({
+        commitsCount: 0,
+        commentsCount: 0,
+    });
 
     useEffect(() => {
 
@@ -12,6 +16,27 @@ const ActiveRepoDetailsSection = ({viewedRepoId, userReposList}) => {
         setViewedRepoData(userReposList.filter(repo => repo.id === viewedRepoId)[0])
 
     }, [userReposList, viewedRepoData, viewedRepoId])
+
+    useEffect(() => {
+
+        if (viewedRepoData) {
+
+            fetch(`${viewedRepoData.url}/commits`)
+            .then(res => res.json())
+            .then(data => setOtherViewedRepoData(prevState => ({
+                ...prevState,
+                commitsCount: data.length
+            })))
+
+            fetch(`${viewedRepoData.url}/comments`)
+            .then(res => res.json())
+            .then(data => setOtherViewedRepoData(prevState => ({
+                ...prevState,
+                commentsCount: data.length
+            })))
+        }
+        
+    }, [viewedRepoData])
     
     return (
         <section
@@ -28,6 +53,12 @@ const ActiveRepoDetailsSection = ({viewedRepoId, userReposList}) => {
                 </p>
                 <p className="active-repo-details-section__param">
                     Watchers: <strong><span>{viewedRepoData.watchers_count}</span></strong>
+                </p>
+                <p className="active-repo-details-section__param">
+                    Commits: <strong><span>{otherViewedRepoData.commitsCount}</span></strong>
+                </p>
+                <p className="active-repo-details-section__param">
+                    Comments: <strong><span>{otherViewedRepoData.commentsCount}</span></strong>
                 </p>
             </>
             :
