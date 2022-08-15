@@ -6,25 +6,25 @@ const SearchUserForm = ({setUserData, setIsSearchValid}) => {
     const [currentSearchValue, setCurrentSearchValue] = useState();
     const [searchedUserName, setSearchedUserName] = useState(); 
 
-    // useEffect(() => {
+    useEffect(() => {
     
-    //     if (searchedUserName) {
+        if (searchedUserName) {
 
-    //         const URL = `https://api.github.com/users/${searchedUserName}`;
+            const URL = `https://api.github.com/users/${searchedUserName}`;
         
-    //         fetch(URL)
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             if (data.id) {
-    //                 setIsSearchValid(true);
-    //                 setUserData(data)
-    //             }
-    //         })
-    //         .catch(setIsSearchValid(false));
+            fetch(URL)
+            .then(res => res.json())
+            .then(data => {
+                if (data.id) {
+                    setIsSearchValid(true);
+                    setUserData(data)
+                }
+            })
+            .catch(setIsSearchValid(false));
 
-    //     }
+        }
     
-    // }, [searchedUserName, setIsSearchValid, setUserData]);
+    }, [searchedUserName, setIsSearchValid, setUserData]);
 
     const handlecurrentSearchValueChange = (e) => {
         setCurrentSearchValue(e.target.value)
