@@ -1,6 +1,23 @@
+@use '../../variables.scss';
+@use '../../globalStyles.scss';
 
 .active-repo-details-section {
-    width: 10rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 20rem;
     height: 50vh;
-    outline: 3px solid purple;
+    gap: 0.5rem;
+
+    &__repo-name {
+        font-size: variables.$ff-100;
+        margin-bottom: 1rem;
+    }
+
+    &__param {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.2rem
+    }
 }

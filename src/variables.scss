@@ -5,11 +5,20 @@
 
 $primaryBgClr: #FFFFFF;
 $secondaryBgClr: rgb(193, 231, 233);
+
 $lightTextClr: rgb(101, 100, 100);
 $darkTextClr: rgb(36, 41, 47);
+
 $primaryBtnClr: rgb(44, 151, 75);
 $secondaryBtnClr: rgb(243, 244, 246);
+
 $borders: rgb(215, 215, 215);
+$links: rgb(9, 125, 225);
+
+$scrollBarTrack:rgb(217, 217, 217);
+$scrollBarThumb:rgb(170, 170, 170);
+$scrollBarThumbHover:rgb(106, 104, 104);
+
 
 /**********/
 /* Fonts */
@@ -30,5 +39,6 @@ $ff-400:1.875rem;
 $ff-300:1.5rem;
 $ff-200:1.25rem;
 $ff-100:0.875rem;
+$ff-000:0.7rem;
 
 

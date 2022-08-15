@@ -1,22 +1,31 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./SearchUserForm.scss";
+import mockedData from '../../mockUserEndpoint.json';
 
 const SearchUserForm = ({setUserData, setIsSearchValid}) => {
 
+    const [searchValue, setSearchValue] = useState("");
+
     useEffect(() => {
     
-        const URL = `https://api.github.com/users/pawel975`;
+        // const URL = `https://api.github.com/users/pawel975`;
     
-        fetch(URL)
-        .then(res => res.json())
-        .then(data => setUserData(data))
-        .catch(err => {
-            console.error(err); 
-            setIsSearchValid(false)
-        })
-    
-      }, [setIsSearchValid, setUserData]);
+        // fetch(URL)
+        // .then(res => res.json())
+        // .then(data => setUserData(data))
+        // .catch(err => {
+        //     console.error(err); 
+        //     setIsSearchValid(false)
+        // })
 
+        setUserData(mockedData)
+    
+    }, [setIsSearchValid, setUserData]);
+
+    const handleFormSubmit = () => {
+
+    }
+    
     return (
         <form 
             className="search-user-form"

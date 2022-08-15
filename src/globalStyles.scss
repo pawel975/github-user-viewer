@@ -1,5 +1,9 @@
 @use './variables.scss';
 
+/***************/
+/* Basic Setup */
+/***************/
+
 /* Box sizing rules */
 *,
 *::before,
@@ -79,4 +83,29 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/*******************/
+/* Custom scroller */
+/*******************/
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.625rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: variables.$scrollBarTrack;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: variables.$scrollBarThumb;
+  border-radius: 10rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: variables.$scrollBarThumbHover;
 }

@@ -1,7 +1,9 @@
+@use '../../variables.scss';
 
 .user-content {
     display: flex;
     flex-direction: column;
+    border-bottom: 0.1rem solid variables.$borders;
 
     .repos-section-wrapper {
         display: flex;

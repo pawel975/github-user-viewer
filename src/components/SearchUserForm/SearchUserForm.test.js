@@ -4,7 +4,10 @@ import SearchUserForm from "./SearchUserForm";
 describe('<SearchUserForm/> should', () => {
 
     test('contain input for user name', () => {
-        render(<SearchUserForm/>);
+        render(<SearchUserForm 
+            setIsSearchValid={jest.fn()}
+            setUserData={jest.fn()}
+        />);
         const searchUserInput = screen.getByPlaceholderText("Search for user...");
         expect(searchUserInput).toBeInTheDocument();
     });
