@@ -4,6 +4,20 @@
 /* Basic Setup */
 /***************/
 
+/* Pixels setup */
+
+@media (max-width: 20rem) {
+  html {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 30rem) {
+  html {
+    font-size: 12px;
+  }
+}
+
 /* Box sizing rules */
 *,
 *::before,

@@ -5,6 +5,9 @@
     width: clamp(15rem, 90%, 100rem);
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    row-gap: 1.5rem;
+    column-gap: 0rem;
     align-items: center;
+    justify-content: center;
+    margin: auto;
 }

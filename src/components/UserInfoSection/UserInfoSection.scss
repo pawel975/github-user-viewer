@@ -3,11 +3,10 @@
 
 .user-info-section {
     padding: 1rem;
-    min-width: 40rem;
+    width: clamp(10rem, 90%, 50rem);
     height: 10rem;
     display: flex;
     gap: 1rem;
-    border-block: 0.1rem solid variables.$borders;
     
     .avatar-wrapper {
         height: 100%;

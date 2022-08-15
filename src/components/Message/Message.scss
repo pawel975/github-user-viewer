@@ -2,7 +2,6 @@
 @use '../../globalStyles.scss';
 
 .message-wrapper {
-    // outline: 2px solid red;
     width: clamp(10rem, 80%, 40rem);
     padding: 0.5rem;
     border: 0.125rem solid;

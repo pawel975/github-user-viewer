@@ -3,9 +3,13 @@
 .user-content {
     display: flex;
     flex-direction: column;
-    border-bottom: 0.1rem solid variables.$borders;
 
     .repos-section-wrapper {
         display: flex;
+        border-block: 0.1rem solid variables.$borders;
+
+        @media (max-width: 45rem) {
+            flex-direction: column;
+        }
     }
 }

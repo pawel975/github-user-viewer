@@ -4,14 +4,17 @@
 .active-repo-details-section {
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 1rem;
     width: 20rem;
     height: 50vh;
     gap: 0.5rem;
+    margin: auto;
 
     &__repo-name {
-        font-size: variables.$ff-100;
+        font-size: variables.$ff-200;
         margin-bottom: 1rem;
+        text-align: center;
     }
 
     &__param {

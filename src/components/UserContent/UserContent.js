@@ -3,22 +3,23 @@ import UserInfoSection from "../UserInfoSection/UserInfoSection";
 import UserReposSection from "../UserReposSection/UserReposSection";
 import "../UserContent/UserContent.scss";
 import { useEffect, useState } from "react";
+import data from '../../mockReposEndpoint.json';
 
 const UserContent = ({userData}) => {
     
     const {repos_url} = userData;
 
-    const [userReposList, setUserReposList] = useState(undefined);
+    const [userReposList, setUserReposList] = useState(data);
     const [viewedRepoId, setViewedRepoId] = useState(null);
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        fetch(repos_url)
-        .then(res => res.json())
-        .then(data => setUserReposList(data))
-        .catch(err => console.error(err));
+    //     fetch(repos_url)
+    //     .then(res => res.json())
+    //     .then(data => setUserReposList(data))
+    //     .catch(err => console.error(err));
 
-    }, [repos_url, userReposList]);
+    // }, [repos_url, userReposList]);
 
     const handleRepoClick = (e) => {
         if (e.target.className === "single-repo") {

@@ -3,10 +3,11 @@ import Message from '../Message/Message';
 import SearchUserForm from '../SearchUserForm/SearchUserForm';
 import UserContent from '../UserContent/UserContent';
 import './App.scss';
+import data from "../../mockUserEndpoint.json";
 
 const App = () => {
 
-  const [userData, setUserData] = useState();
+  const [userData, setUserData] = useState(data);
   const [isSearchValid, setIsSearchValid] = useState(true);
 
   return (
