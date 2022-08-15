@@ -5,10 +5,6 @@ import "../ActiveRepoDetailsSection/ActiveRepoDetailsSection.scss";
 const ActiveRepoDetailsSection = ({viewedRepoId, userReposList}) => {
 
     const [viewedRepoData, setViewedRepoData] = useState();
-    const [otherViewedRepoData, setOtherViewedRepoData] = useState({
-        commitsCount: 0,
-        commentsCount: 0,
-    });
 
     useEffect(() => {
 
