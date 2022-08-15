@@ -5,7 +5,7 @@ const SingleRepo = ({repoDetails, handleRepoClick}) => {
     const {name, html_url, language, id} = repoDetails;
 
     return (
-        <div 
+        <button 
             className="single-repo"
             onClick={handleRepoClick}
             id={id}
@@ -31,7 +31,7 @@ const SingleRepo = ({repoDetails, handleRepoClick}) => {
                     {language}
                 </span>
             </div>
-        </div>
+        </button>
     )
 }
 

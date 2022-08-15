@@ -13,8 +13,8 @@ const ActiveRepoDetailsSection = ({viewedRepoId, userReposList}) => {
     
     return (
         <section
-        className="active-repo-details-section"
-        data-testid="active-repo-details-section"
+            className="active-repo-details-section"
+            data-testid="active-repo-details-section"
         >
         {viewedRepoData && viewedRepoId ?
             <>
@@ -29,7 +29,7 @@ const ActiveRepoDetailsSection = ({viewedRepoId, userReposList}) => {
                 </p>
             </>
             :
-            <p>Choose repo to view details</p>
+            <p>Click at any user's repo to view details</p>
         }
         </section>
     )

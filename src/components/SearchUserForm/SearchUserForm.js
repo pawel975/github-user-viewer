@@ -5,23 +5,29 @@ import mockedData from '../../mockUserEndpoint.json';
 const SearchUserForm = ({setUserData, setIsSearchValid}) => {
 
     const [currentSearchValue, setCurrentSearchValue] = useState("");
-    const [searchedUserName, setSearchedUserName] = useState(""); 
+    const [searchedUserName, setSearchedUserName] = useState(); 
 
     useEffect(() => {
     
-        // const URL = `https://api.github.com/users/${searchedUserName}`;
-    
-        // fetch(URL)
-        // .then(res => res.json())
-        // .then(data => {
-        //     setIsSearchValid(true);
-        //     setUserData(data)
-        // })
-        // .catch(setIsSearchValid(false));
+        if (searchedUserName) {
 
-        setUserData(mockedData)
+            const URL = `https://api.github.com/users/${searchedUserName}`;
+        
+            fetch(URL)
+            .then(res => res.json())
+            .then(data => {
+                if (data.id) {
+                    setIsSearchValid(true);
+                    setUserData(data)
+                }
+            })
+            .catch(setIsSearchValid(false));
+
+        }
+
+        // setUserData(mockedData)
     
-    }, []);
+    }, [searchedUserName, setIsSearchValid, setUserData]);
 
     const handlecurrentSearchValueChange = (e) => {
         setCurrentSearchValue(e.target.value)

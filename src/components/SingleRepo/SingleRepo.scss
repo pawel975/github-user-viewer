@@ -2,6 +2,8 @@
 @use '../../globalStyles.scss';
 
 .single-repo {
+    background-color: transparent;
+    border: none;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -10,12 +12,15 @@
     width: 100%;
     border-bottom: 0.1rem solid variables.$borders;
 
+
+
     &__repo-link {
         font-weight: bold;
         color: variables.$links;
     }
 
     &__privacy-status {
+        background-color: variables.$primaryBgClr;
         pointer-events: none;
         font-size: variables.$ff-000;
         font-weight: 700;
@@ -29,4 +34,10 @@
         pointer-events: none;
         font-size: variables.$ff-100;
     }
+
+}
+
+.single-repo:hover,
+.single-repo:focus-within        {
+    background-color: lightblue;
 }

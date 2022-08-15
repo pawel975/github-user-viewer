@@ -3,34 +3,33 @@ import UserInfoSection from "../UserInfoSection/UserInfoSection";
 import UserReposSection from "../UserReposSection/UserReposSection";
 import "../UserContent/UserContent.scss";
 import { useEffect, useState } from "react";
-import data from '../../mockReposEndpoint.json';
+// import data from '../../mockReposEndpoint.json';
 
 const UserContent = ({userData}) => {
     
-    // const {repos_url} = userData;
+    const {repos_url} = userData;
 
     const [userReposList, setUserReposList] = useState(undefined);
     const [viewedRepoId, setViewedRepoId] = useState(null);
 
     useEffect(() => {
 
-        // fetch(repos_url)
-        // .then(res => res.json())
-        // .then(data => {
-        //     setUserReposList(data)
-        //     setViewedRepoId(userReposList[0].id)
-        // })
-        // .catch(err => console.error(err));
+        fetch(repos_url)
+        .then(res => res.json())
+        .then(data => {
+            setUserReposList(data)
+        })
+        .catch(err => console.error(err));
 
-        setUserReposList(data)
+        // setUserReposList(data)
 
-    }, []);
+    }, [repos_url, userReposList]);
 
     const handleRepoClick = (e) => {
         if (e.target.className === "single-repo") {
             setViewedRepoId(Number(e.target.id))
         }
-        // If repo container child elements are clicked, click is assigned only to parent element
+        // If repo's container child elements are clicked, click is assigned only to parent element
         else if (e.target.parentElement.className === "single-repo") {
             setViewedRepoId(Number(e.target.parentElement.id))
         }

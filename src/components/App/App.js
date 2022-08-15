@@ -6,7 +6,7 @@ import './App.scss';
 
 const App = () => {
 
-  const [userData, setUserData] = useState({});
+  const [userData, setUserData] = useState();
   const [isSearchValid, setIsSearchValid] = useState(true);
 
   return (
@@ -18,7 +18,7 @@ const App = () => {
       />
 
       {
-        isSearchValid ?
+        (isSearchValid && userData) ?
           <UserContent
             userData={userData}
           />
