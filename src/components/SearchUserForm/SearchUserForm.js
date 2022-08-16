@@ -3,7 +3,7 @@ import "./SearchUserForm.scss";
 
 const SearchUserForm = ({setUserData, setIsSearchValid}) => {
 
-    const [currentSearchValue, setCurrentSearchValue] = useState();
+    const [currentSearchValue, setCurrentSearchValue] = useState("");
     const [searchedUserName, setSearchedUserName] = useState(); 
 
     useEffect(() => {
