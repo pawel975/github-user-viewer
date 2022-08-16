@@ -5,6 +5,7 @@ const UserReposSection = ({userReposList, handleRepoClick}) => {
 
     const allRepos = userReposList.map(repoDetails => (
         <SingleRepo 
+            key={repoDetails.id}
             repoDetails={repoDetails}
             handleRepoClick={handleRepoClick}
         />
