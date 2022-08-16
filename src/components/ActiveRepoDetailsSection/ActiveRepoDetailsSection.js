@@ -29,6 +29,9 @@ const ActiveRepoDetailsSection = ({viewedRepoId, userReposList}) => {
                 <p className="active-repo-details-section__param">
                     Watchers: <strong><span>{viewedRepoData.watchers_count}</span></strong>
                 </p>
+                <p className="active-repo-details-section__param">
+                    Forks: <strong><span>{viewedRepoData.forks_count}</span></strong>
+                </p>
             </>
             :
             <Message message={"Click at any user's repo to view details"} type={"info"} />
